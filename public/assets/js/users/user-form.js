@@ -74,7 +74,7 @@ $("form")
       email:{
         required: constants.jquery_validator.validationMsg.required("email"),
         remote: constants.jquery_validator.validationMsg.unique('email'),
-        emailPattern: constants.jquery_validator.validationMsg.invalidMail(email),
+        emailPattern: constants.jquery_validator.validationMsg.invalidMail('email'),
       },
       description: {
         // required: "Description is required",
