@@ -16,7 +16,7 @@ class UserController extends Controller
 {
     public function index(){
         $roles = Role::pluck('name','id');
-        return view('admin.users.index',compact('roles'));
+        return view('web.users.index',compact('roles'));
     }
 
     public function save(UserFormRequest $request){

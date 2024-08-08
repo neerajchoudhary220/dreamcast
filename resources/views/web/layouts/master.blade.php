@@ -1,16 +1,16 @@
-@extends('admin.layouts.base')
+@extends('web.layouts.base')
 @section('master')
     <div class="container-scroller">
-        {{-- @include('admin.includes.header') --}}
+        {{-- @include('web.includes.header') --}}
         <div class="container-fluid page-body-wrapper">
-            @include('admin.includes.sidebar')
+            @include('web.includes.sidebar')
 
             <div class="main-panel">
                 <div class="content-wrapper">
                     @yield('contents')
                 </div>
 
-                {{-- @include('admin.includes.footer') --}}
+                {{-- @include('web.includes.footer') --}}
             </div>
         </div>
     </div>
