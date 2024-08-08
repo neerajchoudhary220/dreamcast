@@ -7,7 +7,7 @@
         </a>
       </li> --}}
 
-      <li class="nav-item">
+      <li class="nav-item active">
         <a class="nav-link" href="{{ route('users') }}">
           <i class="icon-grid menu-icon"></i>
           <span class="menu-title">Users</span>
