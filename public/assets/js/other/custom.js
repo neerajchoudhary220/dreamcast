@@ -39,6 +39,14 @@ const convertArrayToJson=(formdata) =>{
   }
 
 
+  const resetForm =()=>{
+    $("#userFormCollapseBtn").trigger('click');
+    $("form")[0].reset();
+    $("form").find('.error').remove();
+    $("form").find('.form-control').removeClass("error");
+  }
+  
+
   const submitPostFormHandler = () => {
     let formData = new FormData();
     const formElements = $("form").serializeArray();
