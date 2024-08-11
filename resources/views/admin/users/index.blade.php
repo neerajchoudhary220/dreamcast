@@ -1,10 +1,10 @@
-@extends('web.layouts.master')
+@extends('admin.layouts.master')
 
 @section('contents')
     <div class="row">
         <div class="col-12">
-             @include('web.users.form')
-            @include('web.users.datatable')
+             @include('admin.users.form')
+            @include('admin.users.datatable')
             
         </div>
     </div>

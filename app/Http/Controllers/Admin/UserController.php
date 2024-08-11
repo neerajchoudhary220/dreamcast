@@ -16,7 +16,7 @@ class UserController extends Controller
 {
     public function index(){
         $roles = Role::pluck('name','id');
-        return view('web.users.index',compact('roles'));
+        return view('admin.users.index',compact('roles'));
     }
 
     public function save(UserFormRequest $request){
@@ -24,7 +24,6 @@ class UserController extends Controller
             DB::beginTransaction();
            $inputs = $request->only('name','email','phone_number','description');
            if($request->hasFile('image')){
-            // $inputs['image']=storage::put('public/user_images',$request->file('image'));
             $inputs['image']= $request->file('image')->store('user_images');
            }
            $user = User::create($inputs);

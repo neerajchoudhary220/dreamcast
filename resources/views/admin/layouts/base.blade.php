@@ -6,11 +6,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Test</title>
-    @include('web.includes.css-plugins')
+    @include('admin.includes.css-plugins')
 </head>
 <body>
     @yield('master')
-    @include('web.includes.js-plugins')
+    @include('admin.includes.js-plugins')
     
 </body>
 </html>
