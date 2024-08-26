@@ -20,6 +20,7 @@ Route::middleware('auth')->group(function(){
         Route::get('list','list')->name('users.list');
         Route::delete('delete/{user}','delete')->name('users.delete');
         Route::post('check-already-exists','checkAlreadyExists')->name('users.check.already.exists');
+        Route::get('test','test');
     });
 
     Route::get('logout',[AuthController::class, 'logout'])->name('logout');

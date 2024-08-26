@@ -1,8 +1,12 @@
 <?php
 
+use App\Console\Commands\TestCommand;
 use App\Events\SendLoginEamilToAdminProcess;
+use App\Jobs\CategoryJob;
+use App\Models\Category;
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Support\Facades\Artisan;
+use Illuminate\Support\Facades\Schedule;
 
 Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
@@ -10,12 +14,9 @@ Artisan::command('inspire', function () {
 
 
 Artisan::command('test',function(){
-
-    $data =[
-        'email' => 'admin@mail.com',
-        'message' => 'test message'  // replace with actual message content  // replace with actual message content  // replace with actual message content  // replace with actual message content  // replace with actual message content  // replace with actual message content  // replace with actual message content  // replace with actual message content  // replace with actual message content  // replace with actual message content  // replace with actual message content  // replace with actual message content  // replace with actual message content  // replace with actual message content  // replace with actual message content  // replace with actual message content  // replace with actual message content  // replace with actual message content  // replace with actual message content  // replace with actual message content  // replace with actual message content  // replace with actual message content  // replace with actual message content  // replace with actual message content  // replace with actual message content  // replace with actual
-    ];
-   
-    event( new SendLoginEamilToAdminProcess($data));
+   CategoryJob::dispatch();
 
 });
+
+
+// Schedule::command('my:test')->everyMinute();

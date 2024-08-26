@@ -7,6 +7,7 @@ use App\Http\Requests\UserFormRequest;
 use App\Models\Role;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Redis;
 use Illuminate\Support\Facades\Storage;
@@ -15,6 +16,9 @@ use Symfony\Component\HttpKernel\Event\ResponseEvent;
 class UserController extends Controller
 {
     public function index(){
+        if(!Auth::check()){
+           return abort(401);
+        }
         $roles = Role::pluck('name','id');
         return view('admin.users.index',compact('roles'));
     }
@@ -109,6 +113,11 @@ class UserController extends Controller
         } catch (\Exception $e) {
             return response()->json(['error'=>$e->getMessage(),$e->getCode()]);
         }
+    }
+
+    public function test(){
+       $guard =auth()->guard('web')->user();
+       dd($guard);
     }
 
 }

@@ -11,10 +11,10 @@ class Category extends Model
     use HasFactory;
 
     protected $fillable =['name','slug'];
-    protected function name():Attribute{
-        return Attribute::make(
-            get: fn($value)=>ucfirst($value)
+    // protected function name():Attribute{
+    //     return Attribute::make(
+    //         get: fn($value)=>ucfirst($value)
             
-        );
-    } 
+    //     );
+    // } 
 }
